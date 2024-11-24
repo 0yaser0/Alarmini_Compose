@@ -1,4 +1,4 @@
-package com.cmc.alarminicompose
+package com.cmc.alarminicompose.ui.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,8 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.*
 import androidx.navigation.compose.rememberNavController
-import com.cmc.alarminicompose.ui.view.AnalogClockComponent
-import com.cmc.alarminicompose.ui.view.shadow
+import com.cmc.alarminicompose.R
+import com.cmc.alarminicompose.ui.AnalogClockComponent
+import com.cmc.alarminicompose.ui.shadow
 import com.cmc.alarminicompose.ui.theme.AlarmClockTheme
 import com.cmc.alarminicompose.ui.theme.NavigationBarColor
 import com.cmc.alarminicompose.ui.theme.NavigationBarShadowColor
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             NavHost(navController, startDestination = "clock") {
                 composable("clock") { ClockScreen(navController) }
-                composable("helloWorld") { HelloWorldScreen() }
+                composable("helloWorld") { HelloWorldScreen(navController) }
             }
         }
     }
@@ -177,11 +178,19 @@ fun DigitalClockComponent(
 }
 
 @Composable
-fun HelloWorldScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text("Hello World!", style = MaterialTheme.typography.titleLarge)
+fun HelloWorldScreen(navController: NavController) {
+    AlarmClockTheme {
+        Scaffold(bottomBar = { NavigationBarComponent(navController) }) { paddingValues ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("Hello World!", style = MaterialTheme.typography.titleLarge)
+            }
+        }
     }
 }
+
+

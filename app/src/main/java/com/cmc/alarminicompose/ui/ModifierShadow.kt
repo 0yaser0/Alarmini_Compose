@@ -1,4 +1,4 @@
-package com.cmc.alarminicompose.ui.view
+package com.cmc.alarminicompose.ui
 
 import android.graphics.BlurMaskFilter
 import android.graphics.BlurMaskFilter.Blur.NORMAL

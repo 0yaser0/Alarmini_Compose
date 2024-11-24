@@ -1,4 +1,4 @@
-package com.cmc.alarminicompose.ui.view
+package com.cmc.alarminicompose.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
