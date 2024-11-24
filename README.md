@@ -14,6 +14,7 @@ Welcome to the **Alarmini Compose**, an elegantly designed Android application b
 
 ## Screenshots
 
+![Cover](https://github.com/0yaser0/Alarmini_Compose/raw/master/cover.png)
 
 ## Architecture
 
